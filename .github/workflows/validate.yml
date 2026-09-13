@@ -1,0 +1,28 @@
+name: validate
+
+# The plugin is two manifests and a skill. The one thing that can break it is a
+# manifest Claude Code refuses, and that shows up only on a customer's machine at
+# install time. So the same validator runs here, on every change.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install -g @anthropic-ai/claude-code
+      - name: Marketplace manifest
+        run: claude plugin validate .
+      - name: Plugin manifest
+        run: claude plugin validate plugins/gentells
+      - name: MCP entry and skill frontmatter
+        run: |
+          node -e "const m=require('./plugins/gentells/.mcp.json'); if(!m.mcpServers?.gentells?.url?.startsWith('https://gentells.com/')) process.exit(1)"
+          head -1 plugins/gentells/skills/trends/SKILL.md | grep -q '^---$'
+          grep -q '^name: trends$' plugins/gentells/skills/trends/SKILL.md
