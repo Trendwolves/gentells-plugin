@@ -1,0 +1,15 @@
+{
+    "name": "gentells",
+    "owner": {
+        "name": "Trendwolves",
+        "url": "https://gentells.com"
+    },
+    "plugins": [
+        {
+            "name": "gentells",
+            "source": "./plugins/gentells",
+            "description": "Gentells youth culture intelligence for your agent: the MCP server (trends with their evidence, posts, reports, on your plan) and the skill that reads and cites it well."
+        }
+    ],
+    "description": "Gentells, youth culture intelligence from Trendwolves, as a Claude Code plugin."
+}

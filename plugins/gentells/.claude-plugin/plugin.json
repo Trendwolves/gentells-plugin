@@ -1,0 +1,12 @@
+{
+    "name": "gentells",
+    "displayName": "Gentells",
+    "version": "0.1.0",
+    "description": "Gentells youth culture intelligence for your agent: trends read from thousands of signals with their evidence, the posts that interpret them, the reports. Connects the MCP server at gentells.com on your plan and teaches the agent to cite a trend by its evidence, prefer the live window, and speak the house vocabulary.",
+    "author": {
+        "name": "Trendwolves",
+        "url": "https://gentells.com"
+    },
+    "license": "MIT",
+    "homepage": "https://gentells.com"
+}

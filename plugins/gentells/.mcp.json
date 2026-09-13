@@ -1,0 +1,8 @@
+{
+    "mcpServers": {
+        "gentells": {
+            "type": "http",
+            "url": "https://gentells.com/mcp"
+        }
+    }
+}
